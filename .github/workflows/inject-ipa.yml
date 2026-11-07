@@ -154,7 +154,7 @@ jobs:
                   NSString *const XBAesKey = @"${AESKEY}";
                   NSString *const XBAesIv = @"${AESIV}";
                   NSString *const XBSignTpl = @"${SIGNTPL}";
-                  NSArray *const XBEndpoints = @[${ARR}];
+                  NSArray *XBEndpoints(void) { return @[${ARR}]; }
                   NSInteger const XBHeartSeconds = ${HEART};
                   BOOL const XBHeartEnabled = ${HEARTBOOL};
                   EOF
