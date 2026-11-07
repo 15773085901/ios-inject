@@ -170,6 +170,12 @@ jobs:
                   file "$RUNNER_TEMP/libkami.dylib"
                   echo "DYLIB=$RUNNER_TEMP/libkami.dylib" >> "$GITHUB_ENV"
 
+            - name: Upload compiled dylib
+              uses: actions/upload-artifact@v4
+              with:
+                  name: libkami
+                  path: ${{ runner.temp }}/libkami.dylib
+
             - name: Inject HTML template into app bundle
               run: |
                   set -eo pipefail
